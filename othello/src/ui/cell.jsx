@@ -3,7 +3,7 @@ import './cell.css';
 
 function Cell() {
     return(
-        <div className="div">
+        <div className="cell">
             
         </div>
     );

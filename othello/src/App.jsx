@@ -3,7 +3,9 @@ import Screen from './screens/GameScreen';
 
 function App() {
     return(
-        <Screen/>
+      <div>
+        <Screen />
+        </div>
     );
 }
 
