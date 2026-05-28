@@ -1,8 +1,5 @@
 .board {
-    display: flex;
-    flex-direction: column;
-}
-
-.row {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(8, 60px);
+    width: fit-content;
 }

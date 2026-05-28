@@ -1,9 +1,17 @@
 import react from 'react';
 import './cell.css';
 
-function Cell() {
+function Cell({i, j, cell, setBoard}) {
+    var color;
+    if(cell==null){
+        color = "red";
+    }
+    else {
+        color = "black";
+    }
     return(
-        <div className="cell">
+        <div className="cell" style={{ backgroundColor: color }}>
+            
             
         </div>
     );

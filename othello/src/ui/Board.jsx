@@ -8,8 +8,8 @@ function Board() {
   const [board, setBoard] = useState(initializeBoard());
 
 
-    for (let row = 0; row < ROWS; row++) {
-        const rowCells = [];
+    // for (let row = 0; row < ROWS; row++) {
+        // const rowCells = [];
 
         // for (let col = 0; col < COLS; col++) {
         //     const index = row * COLS + col;
@@ -25,9 +25,19 @@ function Board() {
         //     </div>
         // );
         
-    }
+    // }
 
-    return <div className="board">{board.map((row, i) =>
+    return (
+  <div
+    className="board"
+    style={{
+      display: "grid",
+      gridTemplateColumns: `repeat(${COLS}, 60px)`,
+      width: "fit-content"
+    }}
+  >
+    {
+      board.map((row, i) =>
         row.map((cell, j) => (
           <Cell
             key={i + "-" + j}
@@ -37,7 +47,10 @@ function Board() {
             setBoard={setBoard}
           />
         ))
-      )}</div>;
+      )
+    }
+  </div>
+);
 }
 
 export default Board;
