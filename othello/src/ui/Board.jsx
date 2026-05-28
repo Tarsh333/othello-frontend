@@ -1,5 +1,6 @@
-import React from 'react';
+import eact from 'react';
 import Cell from './cell.jsx';
+import './Board.css';
 import { ROWS, COLS } from '../constants/Constants.js';
 
 function Board() {
