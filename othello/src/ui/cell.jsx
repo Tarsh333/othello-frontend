@@ -3,7 +3,7 @@ import './cell.css';
 
 function Cell({i, j, cell, setBoard}) {
     var color;
-    if(cell==null){
+    if(cell.color==null){
         color = "red";
     }
     else {
