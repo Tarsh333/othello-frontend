@@ -9,3 +9,18 @@ export function initializeBoard() {
     }))
   );
 }
+
+export function getColorForCell(cell) {
+
+  switch (cell.color) {
+    case CellState.EMPTY:
+      return "green"
+    case CellState.BLACK:
+      return "black"
+    case CellState.WHITE:
+      return "white"
+  
+    default:
+      return "white";
+  }
+}

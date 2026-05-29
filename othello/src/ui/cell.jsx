@@ -1,15 +1,10 @@
 import react from 'react';
 import './cell.css';
+import { getColorForCell } from '../util/util';
 
 function Cell({i, j, cell, setBoard}) {
-    var color;
+    var color=getColorForCell(cell);
     //dynamic
-    if(cell.color==null){
-        color = "red";
-    }
-    else {
-        color = "black";
-    }
     return(
         <div className="cell" style={{ backgroundColor: color }}>
             
