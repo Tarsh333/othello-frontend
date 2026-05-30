@@ -1,5 +1,6 @@
 // make game logic variables like move (player 1 or 2),add helper fxn which calculates new game state when a move is done
 import {CellState,Player1Color, Player2Color} from '../constants/Constants';
+import { useState } from 'react';
 export default function getGameVars(){
     const [isPlayer1Turn, setIsPlayer1Turn] = useState(true);
     // const colorMap= new Map();
@@ -35,18 +36,18 @@ function flip(board, row, col, player) {
         ) {
 
             // blank
-            if (board[i][j] === CellState.EMPTY)  {
+            if (board[i][j].color === CellState.EMPTY)  {
                 break;
             }
 
             // same player
-            if (board[i][j] === player) {
+            if (board[i][j].color === player) {
 
                 for (let k = 0; k < cells.length; k++) {
 
                     const [x, y] = cells[k];
 
-                    board[x][y] = player;
+                    board[x][y].color = player;
                 }
 
                 break;
@@ -66,7 +67,7 @@ function flip(board, row, col, player) {
 function makeMove(board, row, col) {
 
     // occupied cell
-   if (board[row][col] !== CellState.EMPTY) {
+   if (board[row][col].color !== CellState.EMPTY) {
         return board;
     }
 
@@ -75,7 +76,7 @@ function makeMove(board, row, col) {
     const player = isPlayer1Turn ? Player1Color : Player2Color;
 
     // place piece
-    newBoard[row][col] = player;
+    newBoard[row][col].color = player;
 
     // flip pieces
     flip(newBoard, row, col, player);
