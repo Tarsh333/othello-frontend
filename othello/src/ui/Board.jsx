@@ -13,10 +13,13 @@ function handleMove(row, col) {
     board,
     row,
     col,
-    isPlayer1Turn
+    isPlayer1Turn, changeTurn
   );
 
   setBoard(newBoard);
+  // setIsPlayer1Turn(prev => !prev);
+}
+const changeTurn=()=>{
   setIsPlayer1Turn(prev => !prev);
 }
     return (

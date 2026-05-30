@@ -44,7 +44,7 @@ function flip(board, row, col, player) {
   return board;
 }
 
-export function makeMove(board, row, col, isPlayer1Turn) {
+export function makeMove(board, row, col, isPlayer1Turn,changeTurn) {
   if (board[row][col].color !== CellState.EMPTY) {
     return board;
   }
@@ -61,5 +61,6 @@ export function makeMove(board, row, col, isPlayer1Turn) {
 
   flip(newBoard, row, col, player);
 
+  changeTurn();
   return newBoard;
 }
