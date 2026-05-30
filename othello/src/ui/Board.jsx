@@ -3,30 +3,22 @@ import Cell from './cell.jsx';
 import './Board.css';
 import { ROWS, COLS } from '../constants/Constants.js';
 import { initializeBoard } from '../util/util.js';
+import { makeMove } from '../hooks/Move.js';
 
 function Board() {
   const [board, setBoard] = useState(initializeBoard());
+  const [isPlayer1Turn, setIsPlayer1Turn] = useState(true);
+function handleMove(row, col) {
+  const newBoard = makeMove(
+    board,
+    row,
+    col,
+    isPlayer1Turn
+  );
 
-
-    // for (let row = 0; row < ROWS; row++) {
-        // const rowCells = [];
-
-        // for (let col = 0; col < COLS; col++) {
-        //     const index = row * COLS + col;
-
-        //     rowCells.push(
-        //         <Cell key={index} row={row} col={col} />
-        //     );
-        // }
-
-        // grid.push(
-        //     <div className="row" key={row}>
-        //         {rowCells}
-        //     </div>
-        // );
-        
-    // }
-
+  setBoard(newBoard);
+  setIsPlayer1Turn(prev => !prev);
+}
     return (
   <div
     className="board"
@@ -45,6 +37,7 @@ function Board() {
             j={j}
             cell={cell}
             setBoard={setBoard}
+            handleMove={handleMove}
           />
         ))
       )
