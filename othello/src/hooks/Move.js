@@ -61,4 +61,27 @@ function flip(board, row, col, player) {
 
     return board;
 }
+
+function makeMove(board, row, col) {
+
+    // occupied cell
+    if (board[row][col] !== "") {
+        return board;
+    }
+
+    const newBoard = board.map(r => [...r]);
+
+    const player = isPlayer1Turn ? "B" : "W";
+
+    // place piece
+    newBoard[row][col] = player;
+
+    // flip pieces
+    flip(newBoard, row, col, player);
+
+    // change turn
+    setIsPlayer1Turn(!isPlayer1Turn);
+
+    return newBoard;
+}
 }
