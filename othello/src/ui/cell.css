@@ -1,6 +1,15 @@
 .cell{
     height: 80px;
     width: 80px;
-    background-color: black;
+    background-color: green;
     border: 2px solid rgb(12, 61, 6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.piece{
+    height: 60px;
+    width: 60px;
+    /* border: 2px   solid rgb(12, 61, 6); */
+    border-radius: 50%;
 }

@@ -8,9 +8,11 @@ function Cell({i, j, cell, setBoard,handleMove}) {
         handleMove(i,j)
     }
     return(
-        <div className="cell" style={{ backgroundColor: color }} onClick={updateBoard}>
+        <div className="cell" onClick={updateBoard}>
+        <div className="piece" style={{ backgroundColor: color }}>
             
             
+        </div>
         </div>
     );
 }
