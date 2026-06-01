@@ -24,7 +24,6 @@ const changeTurn=()=>{
 }
     return (
       <div className="board-container">
-        <h1 className="title">OTHELLO</h1>
   <div className="board">
     {
       board.map((row, i) =>
