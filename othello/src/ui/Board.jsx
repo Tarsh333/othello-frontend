@@ -23,14 +23,8 @@ const changeTurn=()=>{
   setIsPlayer1Turn(prev => !prev);
 }
     return (
-  <div
-    className="board"
-    style={{
-      display: "grid",
-      gridTemplateColumns: `repeat(${COLS}, 60px)`,
-      width: "fit-content"
-    }}
-  >
+      <div className="board-container">
+  <div className="board">
     {
       board.map((row, i) =>
         row.map((cell, j) => (
@@ -45,6 +39,7 @@ const changeTurn=()=>{
         ))
       )
     }
+  </div>
   </div>
 );
 }

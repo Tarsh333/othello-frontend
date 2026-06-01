@@ -1,5 +1,13 @@
+.board-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .board {
     display: grid;
-    grid-template-columns: repeat(8, 60px);
-    width: fit-content;
+    grid-template-columns: repeat(8, 80px);
+    grid-template-rows: repeat(8, 80px);
 }
+
