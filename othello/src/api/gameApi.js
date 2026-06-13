@@ -1,6 +1,8 @@
-const BASE = '/api';
+const BASE = import.meta.env.VITE_API_URL || '';
 
 export async function createGame(playerName) {
+  console.log('ENV:', import.meta.env);
+console.log('API:', import.meta.env.VITE_API_URL);
   const res = await fetch(`${BASE}/game`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
